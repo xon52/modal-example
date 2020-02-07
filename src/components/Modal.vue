@@ -9,11 +9,7 @@
 			<!-- Content -->
 			<slot :close="close"></slot>
 			<!-- Close Button (only if this modal is active) -->
-			<button
-				v-if="isActive"
-				:class="`close-button ${$root.mobile?'close-button--mobile':''}`"
-				@click.self="close"
-			>❌</button>
+			<button v-if="isActive" class="close-button" @click.self="close">❌</button>
 		</div>
 		<!-- Child Modal Slot (will be able to take full screen size) -->
 		<slot name="child"></slot>
@@ -98,9 +94,5 @@
 		/* Remove color from emoji */
 		color: transparent;
 		text-shadow: 0 0 0 white;
-	}
-	.close-button--mobile {
-		right: 0px;
-		top: 0px;
 	}
 </style>
