@@ -32,7 +32,6 @@
 		},
 		methods: {
 			close() {
-				this.$emit("close")
 				this.$store.dispatch("modals/close", this.name)
 			}
 		},
