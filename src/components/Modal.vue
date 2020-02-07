@@ -6,10 +6,10 @@
 	>
 		<!-- Content Wrapper -->
 		<div class="modal-wrapper">
+			<!-- Close Button (only if this modal is active) -->
+			<button @click.self="close">X</button>
 			<!-- Content -->
 			<slot :close="close"></slot>
-			<!-- Close Button (only if this modal is active) -->
-			<button v-if="isActive" class="close-button" @click.self="close">❌</button>
 		</div>
 		<!-- Child Modal Slot (will be able to take full screen size) -->
 		<slot name="child"></slot>
@@ -18,7 +18,7 @@
 
 <script>
 	export default {
-		name: "x5Modal",
+		name: "Modal",
 		props: {
 			name: { type: String, required: true },
 			padding: { type: Number, default: 20 }
@@ -75,24 +75,7 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
-	.close-button {
-		position: absolute;
-		background: black;
-		border-radius: 50%;
-		border: 3px white solid;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
-		cursor: pointer;
-		/* Sizing and offset to top right corner */
-		height: 40px;
-		width: 40px;
-		right: -20px;
-		top: -20px;
-		/* Content (close icon) size and centering */
-		font-size: 20px;
-		padding-bottom: 5px;
-		padding-left: 3px;
-		/* Remove color from emoji */
-		color: transparent;
-		text-shadow: 0 0 0 white;
+	.modal-wrapper button {
+		float: right;
 	}
 </style>
