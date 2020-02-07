@@ -1,7 +1,6 @@
 const store = {
 	namespaced: true,
 	state: {
-		active: null,
 		open: [],
 	},
 	getters: {
