@@ -7,7 +7,7 @@
 		<!-- Content Wrapper -->
 		<div class="modal-wrapper">
 			<!-- Close Button (only if this modal is active) -->
-			<button @click.self="close">X</button>
+			<button @click="close">X</button>
 			<!-- Content -->
 			<slot :close="close"></slot>
 		</div>
@@ -20,8 +20,7 @@
 	export default {
 		name: "Modal",
 		props: {
-			name: { type: String, required: true },
-			padding: { type: Number, default: 20 }
+			name: { type: String, required: true }
 		},
 		computed: {
 			isActive() {
